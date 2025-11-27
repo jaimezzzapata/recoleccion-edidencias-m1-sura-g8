@@ -48,4 +48,21 @@ while (opcion !== "5") {
   opcion = prompt(
     "Menú de Opciones:\n1. Registrar Edad del Asistente\n2. Registrar Tipo de Entrada (General o VIP)\n3. Verificar Acceso (Evento Principal)\n4. Verificar Acceso (Zona VIP)\n5. Salir\nIngrese el número de la opción deseada:"
   );
+
+  switch (opcion) {
+    case "1":
+      console.log("Ingrese la edad");
+      let edadInput = prompt("Ingrese la edad: ");
+      let edadGuardada = Number(edadInput);
+
+      if (!isNaN(edadGuardada) && edadGuardada > 0) {
+        edad = edadGuardada;
+        console.log("Edad registrada: " + edad);
+      } else {
+        console.log(
+          "Entrada inválida. Por favor, ingrese un número positivo para la edad."
+        );
+      }
+      break;
+  }
 }
