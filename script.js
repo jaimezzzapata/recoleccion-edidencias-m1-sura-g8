@@ -47,5 +47,28 @@ while (continuar) {
         notaExamenFinal = nota;
         finalIngresado = true;
     }
+  } else if (opcion == "4"){
+    if (proyectosIngresado == false) {
+        console.log("Debe ingresar la nota de Proyectos para realizar el cálculo");
+    } else if (parcialIngresado == false) {
+        console.log("Debe ingresar la nota de Examen Parcial para realizar el cálculo");
+    } else if (finalIngresado == false) {
+        console.log("Debe ingresar la nota de Examen Final para realizar el cálculo");
+    } else {
+        let notaDefinitiva = notaProyectos * 0.4 + notaExamenParcial * 0.3 + notaExamenFinal * 0.3;
+        console.log("Nota de Proyectos (40%): " + notaProyectos);
+        console.log("Nota de Examen Parcial (30%): " + notaExamenParcial);
+        console.log("Nota de Examen Final (30%): " + notaExamenFinal);
+        console.log("Nota Definitiva: " + notaDefinitiva);
+        if (notaDefinitiva >= 4.6) {
+            console.log("Estado: Excelente");
+        } else if (notaDefinitiva >= 3.0 && notaDefinitiva <= 4.5) {
+            console.log("Estado: Aprueba");
+        } else if (notaDefinitiva >= 2.0 && notaDefinitiva <= 2.9) {
+            console.log("Estado: Recupera");
+        } else {
+            console.log("Estado: Reprueba");
+        }
+    }
   }
 }
