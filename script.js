@@ -64,5 +64,17 @@ while (opcion !== "5") {
         );
       }
       break;
+
+    case "2":
+      console.log("Ingrese el tipo de entrada (General o VIP)");
+      let tipoDeEntradaInput = prompt("Ingrese el tipo de entrada (General o VIP):");
+
+      if (tipoDeEntradaInput == "General" || tipoDeEntradaInput == "VIP") {
+        tipoDeEntrada = tipoDeEntradaInput;
+        console.log("Tipo de entrada registrada: " + tipoDeEntrada);
+      } else {
+        console.log("Entrada inválida. Por favor, ingrese General o VIP.");
+      }
+      break;
   }
 }
