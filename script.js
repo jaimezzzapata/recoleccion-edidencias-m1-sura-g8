@@ -100,5 +100,13 @@ while (opcion !== "5") {
         console.log("Acceso DENEGADO (Menor de edad).");
       }
       break;
+
+    case "5":
+      console.log("Saliendo del sistema. ¡Hasta luego!");
+      break;
+
+    default:
+      console.log("Opción inválida. Por favor, ingrese un número entre 1 y 5.");
+      break;
   }
 }
