@@ -70,5 +70,9 @@ while (continuar) {
             console.log("Estado: Reprueba");
         }
     }
+  } else if (opcion == "5") {
+    console.log("Gracias por usar nuestra Calculadora de Notas");
+    console.log("¡Hasta pronto!");
+    continuar = false;
   }
 }
