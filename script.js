@@ -74,5 +74,7 @@ while (continuar) {
     console.log("Gracias por usar nuestra Calculadora de Notas");
     console.log("¡Hasta pronto!");
     continuar = false;
+  } else {
+    console.log("Opción no válida. Por favor, seleccione una opción del 1 al 5.");
   }
 }
