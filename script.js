@@ -12,6 +12,11 @@ while (opcion !== 5) {
         "Seleccione una opción:"
     ));
 
+    if (isNaN(opcion) || opcion < 1 || opcion > 5) {
+        console.log("La opción ingresada no es válida. Inténtelo nuevamente.");
+        continue;
+    }
+
     console.log("La opción que ha seleccionado es: " + opcion);
     switch (opcion) {
 
