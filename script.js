@@ -17,4 +17,35 @@ while (continuar) {
     "                                5. Salir\n"+
     "                                \nSeleccione una opción:"
   );
+  if (opcion == "1"){
+    let nota = prompt("Ingrese la nota de Proyectos (0 - 5):");
+    if (isNaN(nota)) {
+        console.log("Debe ingresar un valor númerico.");
+    } else if (nota < 0 || nota > 5) {
+        console.log("La nota debe estar entre 0 y 5.");
+    } else {
+        notaProyectos = nota;
+        proyectosIngresado = true;
+    }
+  } else if (opcion == "2"){
+    let nota = prompt("Ingrese la nota de Examen Parcial (0 - 5):");
+    if (isNaN(nota)) {
+        console.log("Debe ingresar un valor númerico.");
+    } else if (nota < 0 || nota > 5) {
+        console.log("La nota debe estar entre 0 y 5.");
+    } else {
+        notaExamenParcial = nota;
+        parcialIngresado = true;
+    }
+  } else if (opcion == "3"){
+    let nota = prompt("Ingrese la nota de Examen Final (0 - 5):");
+    if (isNaN(nota)) {
+        console.log("Debe ingresar un valor númerico.");
+    } else if (nota < 0 || nota > 5) {
+        console.log("La nota debe estar entre 0 y 5.");
+    } else {
+        notaExamenFinal = nota;
+        finalIngresado = true;
+    }
+  }
 }
