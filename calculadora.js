@@ -77,7 +77,7 @@ while (continuar) {
     // Mostrar el menú
     var entrada = prompt(
         "--- Calculadora de Notas ---\n" +
-        "Notas actuales (0-5):\n" +
+        "Notas actuales (0-5, decimales poner . en vez de coma):\n" +
         "Proyectos (40%): " + (notaProyectos !== -1 ? notaProyectos : "PENDIENTE") + "\n" +
         "Parcial (30%): " + (notaParcial !== -1 ? notaParcial : "PENDIENTE") + "\n" +
         "Final (30%): " + (notaFinal !== -1 ? notaFinal : "PENDIENTE") + "\n\n" +
