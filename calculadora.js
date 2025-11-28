@@ -12,6 +12,62 @@ var definitiva = 0;
 var opcionMenu = 0;
 var continuar = true;
 
+// -------------------------
+// Consola en página (pantalla completa)
+// Sobrescribimos console.log/warn/error para volcar también al div `#webConsole`.
+// -------------------------
+(function(){
+    function getConsoleEl() {
+        return document.getElementById('webConsole');
+    }
+
+    var origLog = console.log.bind(console);
+    var origWarn = console.warn.bind(console);
+    var origError = console.error.bind(console);
+
+    function appendToWebConsole(msg, cls) {
+        var el = getConsoleEl();
+        if (!el) return;
+        var line = document.createElement('div');
+        line.className = cls || 'log';
+        // Convertir objetos a string legible
+        try {
+            if (typeof msg === 'object') {
+                line.textContent = JSON.stringify(msg, null, 2);
+            } else {
+                line.textContent = String(msg);
+            }
+        } catch (e) {
+            line.textContent = String(msg);
+        }
+        el.appendChild(line);
+        // Mantener el scroll al final (aunque la barra está oculta)
+        el.scrollTop = el.scrollHeight;
+    }
+
+    console.log = function() {
+        origLog.apply(console, arguments);
+        try { appendToWebConsole(Array.from(arguments).join(' '), 'log'); } catch(e){}
+    };
+    console.warn = function() {
+        origWarn.apply(console, arguments);
+        try { appendToWebConsole(Array.from(arguments).join(' '), 'warn'); } catch(e){}
+    };
+    console.error = function() {
+        origError.apply(console, arguments);
+        try { appendToWebConsole(Array.from(arguments).join(' '), 'error'); } catch(e){}
+    };
+
+    // Botón limpiar consola
+    window.addEventListener('load', function(){
+        var btn = document.getElementById('clearConsoleBtn');
+        if (btn) btn.addEventListener('click', function(){
+            var el = document.getElementById('webConsole');
+            if (el) el.innerHTML = '';
+        });
+    });
+})();
+
 // **********************************************
 // Función principal (¡No es una función declarada, es el cuerpo del script!)
 // **********************************************
