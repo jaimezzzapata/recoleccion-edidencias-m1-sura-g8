@@ -23,6 +23,23 @@ while (sistemaActivo) {
     opcionSeleccionada = Number(opcionSeleccionada);
 
     switch (opcionSeleccionada) {
+      case 1:
+        let pesoIngresado = prompt("Ingrese su peso en kilogramos (Kg):");
+        
+        if (isNaN(pesoIngresado)) {
+          console.log("❌ Error: El peso debe ser un valor numérico");
+        } else {
+          pesoIngresado = Number(pesoIngresado);
+          
+          if (pesoIngresado <= 0 || pesoIngresado >= 500) {
+            console.log("❌ Dato inválido: El peso debe ser mayor a 0 y menor a 500 Kg");
+          } else {
+            pesoUsuario = pesoIngresado;
+            console.log("✅ Peso registrado correctamente: " + pesoUsuario + " Kg");
+          }
+        }
+        break;
+
       default:
         console.log("❌ Opción inválida. Por favor seleccione una opción entre 1 y 5");
     }
