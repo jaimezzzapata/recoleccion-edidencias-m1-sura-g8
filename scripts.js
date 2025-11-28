@@ -74,5 +74,36 @@ while (opcionMenu !== "5") {
                 console.log("Respuesta no válida. Usa 'Si' o 'No'.");
             }
             break;
-        }
+        
+        case "4":
+            // Calcular Costo Total → ✅ con validaciones y lógica clara
+            if (!zonaDefinida) {
+                console.log("Error: Debes definir primero la zona de envío (Opción 1).");
+            } else if (!pesoDefinido) {
+                console.log("Error: Debes definir primero el peso del paquete (Opción 2).");
+            } else {
+                let costoTotal = costoBase + recargoPorPeso;
+                if (seguroAplicado) {
+                    costoTotal += costoSeguro;
+                }
+
+                // Mostrar resumen detallado
+                console.log("=== COSTO TOTAL DEL ENVÍO ===");
+                console.log("Costo base: " + costoBase);
+                console.log("Recargo por peso: " + recargoPorPeso);
+                if (seguroAplicado) {
+                    console.log("Seguro: " + costoSeguro);
+                }
+                console.log("TOTAL A PAGAR: " + costoTotal);
+            }
+            break;
+
+        case "5":
+            console.log("Gracias por usar RapidiEntrega. ¡Hasta pronto!");
+            break;
+
+        default:
+            console.log("Opción no válida. Por favor, elige del 1 al 5.");
+            break;
     }
+}
