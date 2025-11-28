@@ -57,6 +57,15 @@ while (sistemaActivo) {
         }
         break;
 
+      case 3:
+        if (pesoUsuario === undefined || alturaUsuario === undefined) {
+          console.log("❌ Error: Debe ingresar primero el peso (Opción 1) y la altura (Opción 2)");
+        } else {
+          indiceMasaCorporal = pesoUsuario / (alturaUsuario * alturaUsuario);
+          console.log("✅ BMI calculado exitosamente: " + indiceMasaCorporal.toFixed(2));
+        }
+        break;
+
       default:
         console.log("❌ Opción inválida. Por favor seleccione una opción entre 1 y 5");
     }
