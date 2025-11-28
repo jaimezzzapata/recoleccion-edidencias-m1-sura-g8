@@ -19,26 +19,26 @@ do {
   console.log("La opción que seleccionaste es: " + opcion);
 
   if (opcion === "1") {
-    let p = Number(prompt("Ingresa tu peso en kilogramos:"));
+    let pesoParcial = Number(prompt("Ingresa tu peso en kilogramos:"));
 
-    if (p > 0 && p < 400) {
-      peso = p;
+    if (pesoParcial > 0 && pesoParcial < 500) {
+      peso = pesoParcial;
       alert("Peso registrado correctamente. ✅");
       console.log("Peso: " + peso);
     } else {
-      alert("Dato invalido, porfavor intenta nuevamente. ❌");
-      console.log("El peso " + p + " es invalido")
+      alert("Dato invalido, por favor intenta nuevamente. ❌");
+      console.log("El peso " + pesoParcial + " es invalido")
     }
   } else if (opcion === "2") {
-    let a = Number(prompt("Ingresa tu altura en metros:"));
+    let alturaParcial = Number(prompt("Ingresa tu altura en metros:"));
 
-    if (a > 0 && a < 3) {
-      altura = a;
+    if (alturaParcial > 0 && alturaParcial < 3) {
+      altura = alturaParcial;
       alert("Altura registrada correctamente. ✅");
-      console.log("Altura: "+altura)
+      console.log("Altura: "+ altura)
     } else {
-      alert("Dato invalido, porfavor intenta nuevamente. ❌");
-      console.log("La altura "+ a +" es invalida")
+      alert("Dato invalido, por favor intenta nuevamente. ❌");
+      console.log("La altura "+ alturaParcial +" es invalida")
     }
   } else if (opcion === "3") {
     if (peso > 0 && altura > 0) {
@@ -47,9 +47,9 @@ do {
       console.log("Tu BMI es: " + bmi)
     } else {
       alert(
-        "Faltan datos en el sistema, porfavor verifica que el peso y la altura estén correctamente registrados"
+        "Faltan datos en el sistema, por favor verifica que el peso y la altura estén correctamente registrados"
       );
-      console.log("Faltan datos en el sistema, porfavor verifica que el peso y la altura estén correctamente registrados")
+      console.log("Faltan datos en el sistema, por favor verifica que el peso y la altura estén correctamente registrados")
     }
   } else if (opcion === "4") {
     if (bmi === 0) {
