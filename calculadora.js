@@ -104,9 +104,9 @@ while (continuar) {
             // Validar que la nota esté en el rango (0 a 5)
             if (nuevaNotaProyecto >= 0 && nuevaNotaProyecto <= 5) {
                 notaProyectos = nuevaNotaProyecto;
-                console.log("✅ Nota de Proyectos registrada: " + notaProyectos);
+                console.log("Nota de Proyectos registrada: " + notaProyectos);
             } else {
-                console.error("❌ Nota inválida, debe ser entre 0 y 5.");
+                console.error("Nota inválida, debe ser entre 0 y 5.");
             }
             break;
 
@@ -120,9 +120,9 @@ while (continuar) {
             // Validar que la nota esté en el rango (0 a 5)
             if (nuevaNotaParcial >= 0 && nuevaNotaParcial <= 5) {
                 notaParcial = nuevaNotaParcial;
-                console.log("✅ Nota de Examen Parcial registrada: " + notaParcial);
+                console.log("Nota de Examen Parcial registrada: " + notaParcial);
             } else {
-                console.error("❌ Nota inválida, debe ser entre 0 y 5.");
+                console.error("Nota inválida, debe ser entre 0 y 5.");
             }
             break;
 
@@ -136,9 +136,9 @@ while (continuar) {
             // Validar que la nota esté en el rango (0 a 5)
             if (nuevaNotaFinal >= 0 && nuevaNotaFinal <= 5) {
                 notaFinal = nuevaNotaFinal;
-                console.log(" Nota de Examen Final registrada: " + notaFinal);
+                console.log("Nota de Examen Final registrada: " + notaFinal);
             } else {
-                console.error("❌ Nota inválida, debe ser entre 0 y 5.");
+                console.error("Nota inválida, debe ser entre 0 y 5.");
             }
             break;
 
@@ -155,7 +155,7 @@ while (continuar) {
                 if (notaParcial === -1) faltantesArr.push('Examen Parcial');
                 if (notaFinal === -1) faltantesArr.push('Examen Final');
 
-                var msgFaltantes = '⚠️ ERROR: Aún no ha ingresado todas las notas. Falta: ' + faltantesArr.join(', ');
+                var msgFaltantes = 'ERROR: Aún no ha ingresado todas las notas. Falta: ' + faltantesArr.join(', ');
                 console.warn(msgFaltantes);
                 try { alert(msgFaltantes); } catch(e) {}
 
@@ -173,13 +173,13 @@ while (continuar) {
 
                 var estado = '';
                 if (definitiva >= 4.6) {
-                    estado = '🏆 Estado: Excelente. ¡Felicidades!';
+                    estado = 'Estado: Excelente. ¡Felicidades!';
                 } else if (definitiva >= 3.0) {
-                    estado = '✅ Estado: Aprueba.';
+                    estado = 'Estado: Aprueba.';
                 } else if (definitiva >= 2.0) {
-                    estado = '🔶 Estado: Recupera. Tienes una oportunidad.';
+                    estado = 'Estado: Recupera. Tienes una oportunidad.';
                 } else {
-                    estado = '❌ Estado: Reprueba.';
+                    estado = 'Estado: Reprueba.';
                 }
 
                 resultadoLines.push(estado);
