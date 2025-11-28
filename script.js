@@ -66,6 +66,30 @@ while (sistemaActivo) {
         }
         break;
 
+      case 4:
+        if (indiceMasaCorporal === undefined) {
+          console.log("❌ Error: Debe calcular primero el BMI (Opción 3)");
+        } else {
+          console.log("\n--- RESULTADO DEL ANÁLISIS ---");
+          console.log("Su BMI es: " + indiceMasaCorporal.toFixed(2));
+          
+          if (indiceMasaCorporal < 18.5) {
+            console.log("Clasificación: Bajo Peso");
+            console.log("⚠️ Se recomienda consultar con un profesional de la salud");
+          } else if (indiceMasaCorporal >= 18.5 && indiceMasaCorporal <= 24.9) {
+            console.log("Clasificación: Peso Normal");
+            console.log("✅ Su peso está dentro del rango saludable");
+          } else if (indiceMasaCorporal >= 25 && indiceMasaCorporal <= 29.9) {
+            console.log("Clasificación: Sobrepeso");
+            console.log("⚠️ Se recomienda una alimentación balanceada y actividad física");
+          } else if (indiceMasaCorporal >= 30) {
+            console.log("Clasificación: Obesidad");
+            console.log("⚠️ Es importante consultar con un profesional de la salud");
+          }
+          console.log("-------------------------------\n");
+        }
+        break;
+
       default:
         console.log("❌ Opción inválida. Por favor seleccione una opción entre 1 y 5");
     }
