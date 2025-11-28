@@ -13,8 +13,7 @@ var opcionMenu = 0;
 var continuar = true;
 
 // -------------------------
-// Consola en página (pantalla completa)
-// Sobrescribimos console.log/warn/error para volcar también al div `#webConsole`.
+// Consola en página (pantalla completa) para una estética más agradable
 // -------------------------
 (function(){
     function getConsoleEl() {
@@ -72,7 +71,7 @@ var continuar = true;
 // Función principal (¡No es una función declarada, es el cuerpo del script!)
 // **********************************************
 
-// Uso un ciclo while para mantener el menú corriendo hasta que el usuario decida salir.
+// Uso un ciclo while para mantener el menú corriendo hasta que el usuario le de salir.
 while (continuar) {
 
     // Mostrar el menú
@@ -137,7 +136,7 @@ while (continuar) {
             // Validar que la nota esté en el rango (0 a 5)
             if (nuevaNotaFinal >= 0 && nuevaNotaFinal <= 5) {
                 notaFinal = nuevaNotaFinal;
-                console.log("✅ Nota de Examen Final registrada: " + notaFinal);
+                console.log(" Nota de Examen Final registrada: " + notaFinal);
             } else {
                 console.error("❌ Nota inválida, debe ser entre 0 y 5.");
             }
@@ -151,7 +150,7 @@ while (continuar) {
             // Primero, verificar si todas las notas están ingresadas (es decir, no son -1).
             if (notaProyectos === -1 || notaParcial === -1 || notaFinal === -1) {
 
-                console.warn("⚠️ ERROR: Aún no ha ingresado todas las notas. Por favor, complete:");
+                console.warn(" ERROR: Aún no ha ingresado todas las notas. Por favor, complete:");
 
                 if (notaProyectos === -1) {
                     console.log(" - Falta la nota de Proyectos.");
@@ -176,14 +175,19 @@ while (continuar) {
 
 
                 // Lógica de Decisiones usando if/else-if/else anidados
+                // Corregido: utilizar una cadena de condiciones que no deje huecos.
+                // Primero las categorías superiores, luego las inferiores.
                 if (definitiva >= 4.6) {
-                    console.log("🏆 Estado: Excelente. ¡Felicidades!");
-                } else if (definitiva >= 3.0 && definitiva <= 4.5) {
-                    console.log("✅ Estado: Aprueba.");
-                } else if (definitiva >= 2.0 && definitiva <= 2.9) {
-                    console.warn("🔶 Estado: Recupera. Tienes una oportunidad.");
-                } else { // Si es menor a 2.0
-                    console.error("❌ Estado: Reprueba.");
+                    console.log(" Estado: Excelente. ¡Felicidades!");
+                } else if (definitiva >= 3.0) {
+                    // Cubre cualquier definitiva >= 3.0 y < 4.6
+                    console.log(" Estado: Aprueba.");
+                } else if (definitiva >= 2.0) {
+                    // Cubre cualquier definitiva >= 2.0 y < 3.0
+                    console.warn(" Estado: Recupera. Tienes una oportunidad.");
+                } else {
+                    // Menor a 2.0
+                    console.error(" Estado: Reprueba.");
                 }
             }
             break;
@@ -192,7 +196,7 @@ while (continuar) {
             // ------------------------------------
             // Salir
             // ------------------------------------
-            console.log("👋 Saliendo de la Calculadora. ¡Adiós!");
+            console.log(" Saliendo de la Calculadora. ¡Adiós!");
             continuar = false; // Detiene el ciclo while
             break;
             
@@ -200,10 +204,10 @@ while (continuar) {
             // Opción no reconocida o entrada no válida
             if (entrada === null || entrada.trim() === "") {
                 // El usuario presionó Cancelar o dejó vacío, lo tomo como salir por cortesía.
-                console.log("👋 Saliendo de la Calculadora. ¡Adiós!");
+                console.log(" Saliendo de la Calculadora. ¡Adiós!");
                 continuar = false;
             } else {
-                console.warn("⚠️ Opción inválida. Por favor, ingrese un número del 1 al 5.");
+                console.warn(" Opción inválida. Por favor, ingrese un número del 1 al 5.");
             }
             break;
     }
@@ -212,4 +216,4 @@ while (continuar) {
     if (continuar) {
         console.log("\n" + "-".repeat(40) + "\n");
     }
-}
+}   

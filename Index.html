@@ -7,13 +7,13 @@ HTML
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Notas - Academia Full-Stack</title>
     <style>
-        /* Hacer que la página y la consola ocupen toda la pantalla y ocultar barras de scroll visibles */
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
-            overflow: hidden; /* evitar scrollbar del body */
-        }
+            overflow: hidden; 
+            background: #121212;    
+            }
 
         #webConsole {
             position: fixed;
@@ -26,15 +26,13 @@ HTML
             font-size: 15px;
             line-height: 1.4;
             white-space: pre-wrap;
-            overflow: auto; /* permitir desplazamiento por rueda, pero ocultar barra */
-            -ms-overflow-style: none; /* IE and Edge */
-            scrollbar-width: none; /* Firefox */
+            overflow: auto;
+            -ms-overflow-style: none; 
+            scrollbar-width: none;
         }
 
-        /* Ocultar la barra de scroll en WebKit (Chrome, Edge, Safari) */
         #webConsole::-webkit-scrollbar { display: none; }
 
-        /* Estilos para diferentes niveles de mensaje */
         #webConsole .log { color: #e6e6e6; }
         #webConsole .warn { color: #ffcc00; }
         #webConsole .error { color: #ff6b6b; }
