@@ -40,6 +40,23 @@ while (sistemaActivo) {
         }
         break;
 
+      case 2:
+        let alturaIngresada = prompt("Ingrese su altura en metros (m):");
+        
+        if (isNaN(alturaIngresada)) {
+          console.log("❌ Error: La altura debe ser un valor numérico");
+        } else {
+          alturaIngresada = Number(alturaIngresada);
+          
+          if (alturaIngresada <= 0 || alturaIngresada >= 3) {
+            console.log("❌ Dato inválido: La altura debe ser mayor a 0 y menor a 3 metros");
+          } else {
+            alturaUsuario = alturaIngresada;
+            console.log("✅ Altura registrada correctamente: " + alturaUsuario + " m");
+          }
+        }
+        break;
+
       default:
         console.log("❌ Opción inválida. Por favor seleccione una opción entre 1 y 5");
     }
