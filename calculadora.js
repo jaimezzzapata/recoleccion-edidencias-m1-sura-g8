@@ -150,17 +150,14 @@ while (continuar) {
             // Primero, verificar si todas las notas están ingresadas (es decir, no son -1).
             if (notaProyectos === -1 || notaParcial === -1 || notaFinal === -1) {
 
-                console.warn(" ERROR: Aún no ha ingresado todas las notas. Por favor, complete:");
+                var faltantesArr = [];
+                if (notaProyectos === -1) faltantesArr.push('Proyectos');
+                if (notaParcial === -1) faltantesArr.push('Examen Parcial');
+                if (notaFinal === -1) faltantesArr.push('Examen Final');
 
-                if (notaProyectos === -1) {
-                    console.log(" - Falta la nota de Proyectos.");
-                }
-                if (notaParcial === -1) {
-                    console.log(" - Falta la nota de Examen Parcial.");
-                }
-                if (notaFinal === -1) {
-                    console.log(" - Falta la nota de Examen Final.");
-                }
+                var msgFaltantes = '⚠️ ERROR: Aún no ha ingresado todas las notas. Falta: ' + faltantesArr.join(', ');
+                console.warn(msgFaltantes);
+                try { alert(msgFaltantes); } catch(e) {}
 
             } else {
                 // Todas las notas están, procedemos al cálculo
@@ -168,27 +165,29 @@ while (continuar) {
 
                 // Asegurar que la definitiva no tenga demasiados decimales
                 definitiva = Math.round(definitiva * 100) / 100;
-                
-                console.log("--- RESULTADO FINAL ---");
-                console.log("Definitiva Calculada: " + definitiva);
-                console.log("-----------------------");
 
+                // Construir mensaje de resultado para mostrar inmediatamente
+                var resultadoLines = [];
+                resultadoLines.push('--- RESULTADO FINAL ---');
+                resultadoLines.push('Definitiva Calculada: ' + definitiva);
 
-                // Lógica de Decisiones usando if/else-if/else anidados
-                // Corregido: utilizar una cadena de condiciones que no deje huecos.
-                // Primero las categorías superiores, luego las inferiores.
+                var estado = '';
                 if (definitiva >= 4.6) {
-                    console.log(" Estado: Excelente. ¡Felicidades!");
+                    estado = '🏆 Estado: Excelente. ¡Felicidades!';
                 } else if (definitiva >= 3.0) {
-                    // Cubre cualquier definitiva >= 3.0 y < 4.6
-                    console.log(" Estado: Aprueba.");
+                    estado = '✅ Estado: Aprueba.';
                 } else if (definitiva >= 2.0) {
-                    // Cubre cualquier definitiva >= 2.0 y < 3.0
-                    console.warn(" Estado: Recupera. Tienes una oportunidad.");
+                    estado = '🔶 Estado: Recupera. Tienes una oportunidad.';
                 } else {
-                    // Menor a 2.0
-                    console.error(" Estado: Reprueba.");
+                    estado = '❌ Estado: Reprueba.';
                 }
+
+                resultadoLines.push(estado);
+                resultadoLines.push('-----------------------');
+
+                var resultadoTexto = resultadoLines.join('\n');
+                console.log(resultadoTexto);
+                try { alert(resultadoTexto); } catch(e) {}
             }
             break;
 
