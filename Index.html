@@ -1,0 +1,61 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Notas - Academia Full-Stack</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; 
+            background: #121212;    
+            }
+
+        #webConsole {
+            position: fixed;
+            inset: 0; 
+            padding: 18px;
+            box-sizing: border-box;
+            background: #0b0b0b;
+            color: #e6e6e6;
+            font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+            font-size: 15px;
+            line-height: 1.4;
+            white-space: pre-wrap;
+            overflow: auto;
+            -ms-overflow-style: none; 
+            scrollbar-width: none;
+        }
+
+        #webConsole::-webkit-scrollbar { display: none; }
+
+        #webConsole .log { color: #e6e6e6; }
+        #webConsole .warn { color: #ffcc00; }
+        #webConsole .error { color: #ff6b6b; }
+        #webConsole .meta { color: #9aa7b1; font-size: 13px; }
+
+        /* Botón limpiar consola */
+        #clearConsoleBtn {
+            position: fixed;
+            right: 12px;
+            top: 12px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.06);
+            color: #e6e6e6;
+            padding: 6px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <div id="webConsole" aria-live="polite"></div>
+    <button id="clearConsoleBtn" title="Limpiar consola">Limpiar</button>
+    <script src="calculadora.js"></script>
+</body>
+</html>
