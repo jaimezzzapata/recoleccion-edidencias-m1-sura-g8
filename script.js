@@ -90,6 +90,12 @@ while (sistemaActivo) {
         }
         break;
 
+      case 5:
+        console.log("\n=== Gracias por usar VidaSana ===");
+        console.log("¡Cuide su salud!");
+        sistemaActivo = false;
+        break;
+
       default:
         console.log("❌ Opción inválida. Por favor seleccione una opción entre 1 y 5");
     }
